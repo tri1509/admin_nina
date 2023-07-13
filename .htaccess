@@ -1,0 +1,20 @@
+RewriteEngine On
+
+RewriteRule "trang-chu" "index.php"
+RewriteRule "dang-nhap" "login.php"
+RewriteRule "dang-ky" "register.php"
+RewriteRule "them-hop-dong" "add-contract.php"
+RewriteRule "danh-sach-hop-dong" "list-contract.php"
+RewriteRule "thong-tin" "thongtin.php"
+RewriteRule "them-nguoi" "themnguoi.php"
+RewriteRule "danh-sach-phong" "phong.php"
+RewriteRule "danh-sach-thanh-vien" "thanhvien.php"
+RewriteRule "thong-bao" "thongbao.php"
+RewriteRule "doi-mat-khau" "edit-pass.php"
+
+RewriteRule "^danh-sach-hop-dong/([0-9]+)$" "list-contract.php?del=$1"
+RewriteRule "^chinh-sua-hop-dong/([0-9]+)$" "edit-contract.php?id=$1"
+RewriteRule "^chinh-sua-phong/([0-9]+)$" "edit-room.php?id=$1"
+
+
+
