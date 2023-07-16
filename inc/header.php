@@ -35,10 +35,11 @@
   <link rel="shortcut icon" type="image/png" href="https://nina.vn/favicon.ico" />
   <link rel="stylesheet" href="./assets/css/dataTables.css">
   <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/index.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
@@ -122,9 +123,9 @@
     </aside>
     <!--  Sidebar End -->
     <!--  Main wrapper -->
-    <div class="body-wrapper">
+    <div class="body-wrapper" style="background: #eee;">
       <!--  Header Start -->
-      <header class="app-header Regular shadow">
+      <header class="app-header header-nina .Regular .shadow">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">
             <li class="nav-item d-block d-xl-none">
@@ -141,7 +142,7 @@
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              <span class="btn btn-primary"><?php echo $name." - ".$code ; ?></span>
+              <span class="btn btn-danger btn-nina"><?php echo $name." - ".$code ; ?></span>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover btn-frame" href="javascript:void(0)" id="drop2"
                   data-bs-toggle="dropdown" aria-expanded="false">

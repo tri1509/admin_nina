@@ -1,377 +1,627 @@
 <?php include 'inc/header.php';?>
-<div class="row">
-  <div class="col-lg-8 d-flex align-items-strech">
-    <div class="card w-100">
-      <div class="card-body">
-        <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
-          <div class="mb-3 mb-sm-0">
-            <h5 class="card-title fw-semibold">Sales Overview</h5>
-          </div>
-          <div>
-            <select class="form-select">
-              <option value="1">March 2023</option>
-              <option value="2">April 2023</option>
-              <option value="3">May 2023</option>
-              <option value="4">June 2023</option>
-            </select>
-          </div>
+<?php include 'data/support.php';?>
+<?php include 'data/web.php';?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<div id="index-content">
+  <section id="support-top" class="support-top clearfix">
+    <div class="container">
+      <div id="support">
+        <?php foreach($list_support as $item) { ?>
+        <div class="items">
+          <span class="icon"><svg width="20px" height="20px" version="1.1" id="Layer_1_1_"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+              <path style="fill: #C30E13;"
+                d="M8,0C5.971,0,4.124,0.762,2.714,2.006l2.845,2.845C6.236,4.326,7.076,4,8,4s1.764,0.326,2.441,0.852l2.845-2.845 C11.876,0.762,10.029,0,8,0z">
+              </path>
+              <path style="fill: #C30E13;"
+                d="M5.559,11.148l-2.845,2.845C4.124,15.238,5.971,16,8,16s3.876-0.762,5.286-2.006l-2.845-2.845C9.764,11.674,8.924,12,8,12 S6.236,11.674,5.559,11.148z">
+              </path>
+              <path style="fill: #C30E13;"
+                d="M11.148,5.559C11.674,6.236,12,7.076,12,8c0,0.924-0.326,1.764-0.852,2.441l2.845,2.845C15.238,11.876,16,10.029,16,8 s-0.762-3.876-2.006-5.286L11.148,5.559z">
+              </path>
+              <path style="fill: #C30E13;"
+                d="M4.852,10.441C4.326,9.764,4,8.924,4,8c0-0.924,0.326-1.764,0.852-2.441L2.006,2.714C0.762,4.124,0,5.971,0,8 s0.762,3.876,2.006,5.286L4.852,10.441z">
+              </path>
+            </svg></span>
+          <span class="name"><?php echo $item['name'] ?></span>
+          <a title="<?php echo $item['sdt'] ?>" class="cl-red show-hotline">
+            <?php echo $item['sdt'] ?>
+          </a>
+          <a href="tel:<?php echo $item['sdt'] ?>" title="<?php echo $item['sdt'] ?>"
+            class="cl-red show-hotline-mobile">
+            <?php echo $item['sdt'] ?>
+          </a>
         </div>
-        <div id="chart"></div>
+        <?php } ?>
       </div>
     </div>
-  </div>
-  <div class="col-lg-4">
-    <div class="row">
-      <div class="col-lg-12">
-        <!-- Yearly Breakup -->
-        <div class="card overflow-hidden">
-          <div class="card-body p-4">
-            <h5 class="card-title mb-9 fw-semibold">Yearly Breakup</h5>
-            <div class="row align-items-center">
-              <div class="col-8">
-                <h4 class="fw-semibold mb-3">$36,358</h4>
-                <div class="d-flex align-items-center mb-3">
-                  <span
-                    class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">
-                    <i class="ti ti-arrow-up-left text-success"></i>
-                  </span>
-                  <p class="text-dark me-1 fs-3 mb-0">+9%</p>
-                  <p class="fs-3 mb-0">last year</p>
-                </div>
-                <div class="d-flex align-items-center">
-                  <div class="me-4">
-                    <span class="round-8 bg-primary rounded-circle me-2 d-inline-block"></span>
-                    <span class="fs-2">2023</span>
-                  </div>
-                  <div>
-                    <span class="round-8 bg-light-primary rounded-circle me-2 d-inline-block"></span>
-                    <span class="fs-2">2023</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="d-flex justify-content-center">
-                  <div id="breakup"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+  </section>
+  <section id="slider">
+    <div id="jssor_1"
+      style="position:relative;margin:0 auto;top:0px;left:0px;width:1180px;height:400px;overflow:hidden;visibility:hidden;">
+      <div data-u="loading" class="jssorl-oval"
+        style="position:absolute;top:0px;left:0px;text-align:center;background-color:rgba(0,0,0,0.7);">
+        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;"
+          src="https://nina.vn/images/loading.gif" />
+      </div>
+      <div data-u="slides"
+        style="cursor:default;position:relative;top:0px;left:0px;width:1180px;height:400px;overflow:hidden;">
+        <div data-b="0">
+          <img data-u="image" src="https://nina.vn/upload/hinhanh/817237421747114.webp" alt="" />
+        </div>
+        <div data-b="0">
+          <img data-u="image" src="https://nina.vn/upload/hinhanh/163047535990282.webp" alt="" />
+        </div>
+        <div data-b="0">
+          <img data-u="image" src="https://nina.vn/upload/hinhanh/402937486580287.webp" alt="" />
+        </div>
+        <div data-b="0">
+          <img data-u="image" src="https://nina.vn/upload/hinhanh/643937589601526.webp" alt="" />
+        </div>
+        <div data-b="0">
+          <img data-u="image" src="https://nina.vn/upload/hinhanh/300062775570792.webp" alt="" />
+        </div>
+        <div data-b="0">
+          <img data-u="image" src="https://nina.vn/upload/hinhanh/509836554584295.webp" alt="" />
         </div>
       </div>
-      <div class="col-lg-12">
-        <!-- Monthly Earnings -->
-        <div class="card">
-          <div class="card-body">
-            <div class="row alig n-items-start">
-              <div class="col-8">
-                <h5 class="card-title mb-9 fw-semibold"> Monthly Earnings </h5>
-                <h4 class="fw-semibold mb-3">$6,820</h4>
-                <div class="d-flex align-items-center pb-1">
-                  <span
-                    class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
-                    <i class="ti ti-arrow-down-right text-danger"></i>
-                  </span>
-                  <p class="text-dark me-1 fs-3 mb-0">+9%</p>
-                  <p class="fs-3 mb-0">last year</p>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="d-flex justify-content-end">
-                  <div
-                    class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
-                    <i class="ti ti-currency-dollar fs-6"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="earning"></div>
+      <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1"
+        data-scale="0.5" data-scale-bottom="0.75">
+        <div data-u="prototype" class="i" style="width:16px;height:16px;">
+          <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+          </svg>
         </div>
+      </div>
+      <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2"
+        data-scale="0.75" data-scale-left="0.75">
+        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+        </svg>
+      </div>
+      <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2"
+        data-scale="0.75" data-scale-right="0.75">
+        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+        </svg>
       </div>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-lg-4 d-flex align-items-stretch">
-    <div class="card w-100">
-      <div class="card-body p-4">
-        <div class="mb-4">
-          <h5 class="card-title fw-semibold">Recent Transactions</h5>
-        </div>
-        <ul class="timeline-widget mb-0 position-relative mb-n5">
-          <li class="timeline-item d-flex position-relative overflow-hidden">
-            <div class="timeline-time text-dark flex-shrink-0 text-end">09:30</div>
-            <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-              <span class="timeline-badge border-2 border border-primary flex-shrink-0 my-8"></span>
-              <span class="timeline-badge-border d-block flex-shrink-0"></span>
-            </div>
-            <div class="timeline-desc fs-3 text-dark mt-n1">Payment received from John Doe of $385.90</div>
+  </section>
+  <section id="packed-web" class="packed-web clearfix">
+    <div class="container">
+      <div class="packed-title">
+        <h2>Bảng báo giá thiết kế website trọn gói</h2>
+        <p>Mang lại mọi thứ bạn cần cho một website chuyên nghiệp với đầy đủ tính năng</p>
+      </div>
+    </div>
+    <div class="full-package-web">
+      <div class="container">
+        <ul class="list-package">
+          <li class="active hover_sang2" rel="tab-cb">
+            Gói cơ bản
           </li>
-          <li class="timeline-item d-flex position-relative overflow-hidden">
-            <div class="timeline-time text-dark flex-shrink-0 text-end">10:00 am</div>
-            <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-              <span class="timeline-badge border-2 border border-info flex-shrink-0 my-8"></span>
-              <span class="timeline-badge-border d-block flex-shrink-0"></span>
-            </div>
-            <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New sale recorded <a href="javascript:void(0)"
-                class="text-primary d-block fw-normal">#ML-3467</a>
-            </div>
+          <li rel="tab-pt" class="hover_sang2">
+            Gói phổ thông
           </li>
-          <li class="timeline-item d-flex position-relative overflow-hidden">
-            <div class="timeline-time text-dark flex-shrink-0 text-end">12:00 am</div>
-            <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-              <span class="timeline-badge border-2 border border-success flex-shrink-0 my-8"></span>
-              <span class="timeline-badge-border d-block flex-shrink-0"></span>
-            </div>
-            <div class="timeline-desc fs-3 text-dark mt-n1">Payment was made of $64.95 to Michael</div>
-          </li>
-          <li class="timeline-item d-flex position-relative overflow-hidden">
-            <div class="timeline-time text-dark flex-shrink-0 text-end">09:30 am</div>
-            <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-              <span class="timeline-badge border-2 border border-warning flex-shrink-0 my-8"></span>
-              <span class="timeline-badge-border d-block flex-shrink-0"></span>
-            </div>
-            <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New sale recorded <a href="javascript:void(0)"
-                class="text-primary d-block fw-normal">#ML-3467</a>
-            </div>
-          </li>
-          <li class="timeline-item d-flex position-relative overflow-hidden">
-            <div class="timeline-time text-dark flex-shrink-0 text-end">09:30 am</div>
-            <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-              <span class="timeline-badge border-2 border border-danger flex-shrink-0 my-8"></span>
-              <span class="timeline-badge-border d-block flex-shrink-0"></span>
-            </div>
-            <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New arrival recorded
-            </div>
-          </li>
-          <li class="timeline-item d-flex position-relative overflow-hidden">
-            <div class="timeline-time text-dark flex-shrink-0 text-end">12:00 am</div>
-            <div class="timeline-badge-wrap d-flex flex-column align-items-center">
-              <span class="timeline-badge border-2 border border-success flex-shrink-0 my-8"></span>
-            </div>
-            <div class="timeline-desc fs-3 text-dark mt-n1">Payment Done</div>
+          <li rel="tab-nc" class="hover_sang2">
+            Gói nâng cao
           </li>
         </ul>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-8 d-flex align-items-stretch">
-    <div class="card w-100">
-      <div class="card-body p-4">
-        <h5 class="card-title fw-semibold mb-4">Recent Transactions</h5>
-        <div class="table-responsive">
-          <table class="table text-nowrap mb-0 align-middle">
-            <thead class="text-dark fs-4">
-              <tr>
-                <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">Id</h6>
-                </th>
-                <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">Assigned</h6>
-                </th>
-                <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">Name</h6>
-                </th>
-                <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">Priority</h6>
-                </th>
-                <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">Budget</h6>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">1</h6>
-                </td>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-1">Sunil Joshi</h6>
-                  <span class="fw-normal">Web Designer</span>
-                </td>
-                <td class="border-bottom-0">
-                  <p class="mb-0 fw-normal">Elite Admin</p>
-                </td>
-                <td class="border-bottom-0">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-primary rounded-3 fw-semibold">Low</span>
-                  </div>
-                </td>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0 fs-4">$3.9</h6>
-                </td>
-              </tr>
-              <tr>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">2</h6>
-                </td>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-1">Andrew McDownland</h6>
-                  <span class="fw-normal">Project Manager</span>
-                </td>
-                <td class="border-bottom-0">
-                  <p class="mb-0 fw-normal">Real Homes WP Theme</p>
-                </td>
-                <td class="border-bottom-0">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-secondary rounded-3 fw-semibold">Medium</span>
-                  </div>
-                </td>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0 fs-4">$24.5k</h6>
-                </td>
-              </tr>
-              <tr>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">3</h6>
-                </td>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-1">Christopher Jamil</h6>
-                  <span class="fw-normal">Project Manager</span>
-                </td>
-                <td class="border-bottom-0">
-                  <p class="mb-0 fw-normal">MedicalPro WP Theme</p>
-                </td>
-                <td class="border-bottom-0">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-danger rounded-3 fw-semibold">High</span>
-                  </div>
-                </td>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0 fs-4">$12.8k</h6>
-                </td>
-              </tr>
-              <tr>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">4</h6>
-                </td>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-1">Nirav Joshi</h6>
-                  <span class="fw-normal">Frontend Engineer</span>
-                </td>
-                <td class="border-bottom-0">
-                  <p class="mb-0 fw-normal">Hosting Press HTML</p>
-                </td>
-                <td class="border-bottom-0">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-success rounded-3 fw-semibold">Critical</span>
-                  </div>
-                </td>
-                <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0 fs-4">$2.4k</h6>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="content-package active" id="tab-cb">
+          <div class="row-package">
+            <div class="col-package">
+              <div class="wrap-package">
+                <h2 class="header-title cl-1">Gói Cơ Bản 01</h2>
+                <ul>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Website cơ bản</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Tìm kiếm cơ bản</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Tối ưu link</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Sơ đồ website</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Đăng ký nhận tin</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="checked"></span>
+                    <h3>Popup quảng cáo</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="checked"></span>
+                    <h3>Google dịch</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="checked"></span>
+                    <h3>Đóng dấu hình ảnh</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="checked"></span>
+                    <h3>Nút gọi điện, chat zalo/facebook</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="checked"></span>
+                    <h3>Mục lục bài viết/Sản phẩm</h3>
+                  </li>
+
+                </ul>
+                <div class="btn-support cl-1"><a href="#" class="btn-views hvr-float-shadow"
+                    data-package="CB01"><span>Liên hệ</span>
+                    <span>báo giá</span></a></div>
+              </div>
+            </div>
+            <div class="col-package">
+              <div class="wrap-package">
+                <h2 class="header-title cl-2">Gói Cơ Bản 02</h2>
+                <ul>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Website cơ bản</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Tìm kiếm cơ bản</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Tối ưu link</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Sơ đồ website</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Đăng ký nhận tin</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Popup quảng cáo</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Google dịch</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Đóng dấu hình ảnh</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Nút gọi điện, chat zalo/facebook</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="checked"></span>
+                    <h3>Mục lục bài viết/Sản phẩm</h3>
+                  </li>
+
+                </ul>
+                <div class="btn-support cl-2"><a href="#" class="btn-views hvr-float-shadow"
+                    data-package="CB02"><span>Liên hệ</span>
+                    <span>báo giá</span></a></div>
+              </div>
+            </div>
+            <div class="col-package">
+              <div class="wrap-package">
+                <h2 class="header-title cl-3">Gói Cơ Bản 03</h2>
+                <ul>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Website cơ bản</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Tìm kiếm cơ bản</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Tối ưu link</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Sơ đồ website</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Đăng ký nhận tin</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Popup quảng cáo</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Google dịch</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Đóng dấu hình ảnh</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Nút gọi điện, chat zalo/facebook</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Mục lục bài viết/Sản phẩm</h3>
+                  </li>
+
+                </ul>
+                <div class="btn-support cl-3"><a href="#" class="btn-views hvr-float-shadow"
+                    data-package="CB03"><span>Liên hệ</span>
+                    <span>báo giá</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-package" id="tab-pt">
+          <div class="row-package">
+            <div class="col-package">
+              <div class="wrap-package">
+                <h2 class="header-title cl-1">Gói Phổ Thông 01</h2>
+                <ul>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Gói cơ bản 03</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Mobile / Responsive</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Chứng chỉ số SSL</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="close"></span>
+                    <h3>Thông báo đẩy (Onesignal)</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="close"></span>
+                    <h3>Giỏ hàng / Đặt lịch cơ bản</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="close"></span>
+                    <h3>Popup quảng cáo</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="close"></span>
+                    <h3>Google dịch</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="close"></span>
+                    <h3>Song ngữ</h3>
+                  </li>
+                </ul>
+                <div class="btn-support cl-1"><a href="#" class="btn-views hvr-float-shadow"
+                    data-package="PT01"><span>Liên hệ</span>
+                    <span>báo giá</span></a></div>
+              </div>
+            </div>
+            <div class="col-package">
+              <div class="wrap-package">
+                <h2 class="header-title cl-2">Gói Phổ Thông 02</h2>
+                <ul>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Gói cơ bản 03</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Mobile / Responsive</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Chứng chỉ số SSL</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Thông báo đẩy (Onesignal)</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Giỏ hàng / Đặt lịch cơ bản</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Popup quảng cáo</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Google dịch</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="close"></span>
+                    <h3>Song ngữ</h3>
+                  </li>
+                </ul>
+                <div class="btn-support cl-2"><a href="#" class="btn-views hvr-float-shadow"
+                    data-package="PT02"><span>Liên hệ</span>
+                    <span>báo giá</span></a></div>
+              </div>
+            </div>
+            <div class="col-package">
+              <div class="wrap-package">
+                <h2 class="header-title cl-3">Gói Phổ Thông 03</h2>
+                <ul>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Gói cơ bản 03</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Mobile / Responsive</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Chứng chỉ số SSL</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Thông báo đẩy (Onesignal)</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Giỏ hàng / Đặt lịch cơ bản</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Popup quảng cáo</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Google dịch</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Song ngữ</h3>
+                  </li>
+                </ul>
+                <div class="btn-support cl-3"><a href="#" class="btn-views hvr-float-shadow"
+                    data-package="PT03"><span>Liên hệ</span>
+                    <span>báo giá</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-package" id="tab-nc">
+          <div class="row-package">
+            <div class="col-package">
+              <div class="wrap-package">
+                <h2 class="header-title cl-1">Gói Nâng Cao 01</h2>
+                <ul>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Gói phổ thông 01</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Đăng ký đăng nhập</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Tìm kiếm nâng cao</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Phân quyền quản trị</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="close"></span>
+                    <h3>Xuất/Nhập file Excel</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="close"></span>
+                    <h3>Thanh toán trực tuyến</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/close1.png" alt="close"></span>
+                    <h3>Phí vận chuyển</h3>
+                  </li>
+                </ul>
+                <div class="btn-support cl-1"><a href="#" class="btn-views hvr-float-shadow"
+                    data-package="PT01"><span>Liên hệ</span>
+                    <span>báo giá</span></a></div>
+              </div>
+            </div>
+            <div class="col-package">
+              <div class="wrap-package">
+                <h2 class="header-title cl-2">Gói Nâng Cao 02</h2>
+                <ul>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Gói phổ thông 02</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Đăng ký đăng nhập</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Tìm kiếm nâng cao</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Phân quyền quản trị</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Xuất/Nhập file Excel</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Thanh toán trực tuyến</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Phí vận chuyển</h3>
+                  </li>
+                </ul>
+                <div class="btn-support cl-2"><a href="#" class="btn-views hvr-float-shadow"
+                    data-package="PT02"><span>Liên hệ</span>
+                    <span>báo giá</span></a></div>
+              </div>
+            </div>
+            <div class="col-package">
+              <div class="wrap-package">
+                <h2 class="header-title cl-3">Gói Nâng Cao 03</h2>
+                <ul>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Gói phổ thông 03</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Đăng ký đăng nhập</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Tìm kiếm nâng cao</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="checked"></span>
+                    <h3>Phân quyền quản trị</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Xuất/Nhập file Excel</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Thanh toán trực tuyến</h3>
+                  </li>
+                  <li><span><img src="https://nina.vn/images/checked1.png" alt="close"></span>
+                    <h3>Phí vận chuyển</h3>
+                  </li>
+                </ul>
+                <div class="btn-support cl-3"><a href="#" class="btn-views hvr-float-shadow"
+                    data-package="PT03"><span>Liên hệ</span>
+                    <span>báo giá</span></a></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6 col-xl-3">
-    <div class="card overflow-hidden rounded-2">
-      <div class="position-relative">
-        <a href="javascript:void(0)"><img src="./assets/images/products/s4.jpg" class="card-img-top rounded-0"
-            alt="..."></a>
-        <a href="javascript:void(0)"
-          class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
-          data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
-            class="ti ti-basket fs-4"></i></a>
+  </section>
+  <section id="catagory-top" class="catagory-top clearfix">
+    <div class="container">
+      <div id="catagory">
+        <div class="items showtotop">
+          <div class="catagory-img hover_xam">
+            <a>
+              <img width="300" height="240" src="https://nina.vn/upload/baiviet/thietkeweb510-3216.webp"
+                alt="Thiết kế website">
+            </a>
+          </div>
+          <div class="catagory-title">
+            <h2>Thiết kế website </h2>
+          </div>
+          <div class="stroke"></div>
+          <div class="catagory-desc">
+            <p>Website, đầy đủ tính năng chính của website. Tất cả các tính năng đều có thể quản trị nội dung thông qua
+              trang quản trị dễ dàng, bảo mật.</p>
+          </div>
+        </div>
+        <div class="items showtotop delay-02">
+          <div class="catagory-img hover_xam">
+            <a>
+              <img width="300" height="240" src="https://nina.vn/upload/baiviet/webhosting461-4412.webp"
+                alt="Web hosting">
+            </a>
+          </div>
+          <div class="catagory-title">
+            <h2>
+              Web hosting </h2>
+          </div>
+          <div class="stroke"></div>
+          <div class="catagory-desc">
+            <p>Là giải pháp cho các cá nhân hoặc doanh nghiệp muốn có một website giới thiệu, giao dịch thương mại trên
+              Internet một cách hiệu quả và tiết kiệm chi phí.</p>
+          </div>
+        </div>
+        <div class="items showtotop delay-04">
+          <div class="catagory-img hover_xam">
+            <a>
+              <img width="300" height="240" src="https://nina.vn/upload/baiviet/domain1756-3179.webp" alt="Domain">
+            </a>
+          </div>
+          <div class="catagory-title">
+            <h2>
+              Domain </h2>
+          </div>
+          <div class="stroke"></div>
+          <div class="catagory-desc">
+            <p>Domain hỗ trợ đầy đủ các chức năng thay đổi các record hoàn toàn miễn phí thông qua Controlpanel:A
+              Record,MX Record.</p>
+          </div>
+        </div>
+        <div class="items showtotop delay-06">
+          <div class="catagory-img hover_xam">
+            <a>
+              <img width="300" height="240" src="https://nina.vn/upload/baiviet/emailserver4142-2359.webp"
+                alt="Email server">
+            </a>
+          </div>
+          <div class="catagory-title">
+            <h2>
+              Email server </h2>
+          </div>
+          <div class="stroke"></div>
+          <div class="catagory-desc">
+            <p>Email Server là giải pháp Mail dành cho các công ty có nhu cầu sử dụng số lượng Mail nhiều để giao dịch
+              thương mại đòi hỏi tốc độ nhanh.</p>
+          </div>
+        </div>
+
       </div>
-      <div class="card-body pt-3 p-4">
-        <h6 class="fw-semibold fs-4">Boat Headphone</h6>
-        <div class="d-flex align-items-center justify-content-between">
-          <h6 class="fw-semibold fs-4 mb-0">$50 <span class="ms-2 fw-normal text-muted fs-3"><del>$65</del></span>
-          </h6>
-          <ul class="list-unstyled d-flex align-items-center mb-0">
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-          </ul>
+    </div>
+  </section>
+  <section id="design-top" class="design-top clearfix">
+    <div class="container">
+      <div class="design-title">
+        <h3>QUY TRÌNH THIẾT KẾ WEBSITE TẠI NINA</h3>
+      </div>
+      <div id="design">
+        <div class="items showtoright delay-02">
+          <div class="design-desc">
+            <div class="design-img step1">
+              <a>
+                <img width="100" height="100" src="https://nina.vn/upload/baiviet/15436-1083.webp" alt="Giai đoạn 1"
+                  class="">
+              </a>
+            </div>
+            <div class="design-htitle">
+              <h3>
+                Tư vấn và lấy ý tưởng khách hàng xây dựng website </h3>
+            </div>
+          </div>
+        </div>
+        <div class="items showtoright">
+          <div class="design-desc">
+            <div class="design-img step2">
+              <a>
+                <img width="100" height="100" src="https://nina.vn/upload/baiviet/29564-924.webp" alt="Giai đoạn 2"
+                  class="">
+              </a>
+            </div>
+            <div class="design-htitle">
+              <h3>
+                Demo giao diện website, theo ý tưởng khách hàng cung cấp. </h3>
+            </div>
+          </div>
+        </div>
+        <div class="items showtotop">
+          <div class="design-desc">
+            <div class="design-img step3">
+              <a>
+                <img width="100" height="100" src="https://nina.vn/upload/baiviet/32373-6718.webp" alt="Giai đoạn 3"
+                  class="">
+              </a>
+            </div>
+            <div class="design-htitle">
+              <h3>
+                Khách hàng duyệt bản demo theo bảng thiết kế của NINA. </h3>
+            </div>
+          </div>
+        </div>
+        <div class="items showtoleft">
+          <div class="design-desc">
+            <div class="design-img step4">
+              <a>
+                <img width="100" height="100" src="https://nina.vn/upload/baiviet/42145-2365.webp" alt="Giai đoạn 4"
+                  class="">
+              </a>
+            </div>
+            <div class="design-htitle">
+              <h3>
+                NINA tiến hành xây dựng module và hoàn thiện website. </h3>
+            </div>
+          </div>
+        </div>
+        <div class="items showtoleft delay-02">
+          <div class="design-desc">
+            <div class="design-img step5">
+              <a>
+                <img width="100" height="100" src="https://nina.vn/upload/baiviet/54259-6863.webp" alt="Giai đoạn 5"
+                  class="">
+              </a>
+            </div>
+            <div class="design-htitle">
+              <h3>
+                Nghiệm thu, thanh lý hợp đồng bàn giao website. </h3>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-xl-3">
-    <div class="card overflow-hidden rounded-2">
-      <div class="position-relative">
-        <a href="javascript:void(0)"><img src="./assets/images/products/s5.jpg" class="card-img-top rounded-0"
-            alt="..."></a>
-        <a href="javascript:void(0)"
-          class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
-          data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
-            class="ti ti-basket fs-4"></i></a>
+  </section>
+  <section id="project-top" class="project-top clearfix">
+    <div class="container">
+      <div class="project-title">
+        <h3>KHÁCH HÀNG THIẾT KẾ WEBSITE TẠI NINA</h3>
+        <p>
+          Khách hàng thiết kế website tại Nina Co., Ltd.vinh dự được tham gia đóng góp vào tiến trình phát triển Công
+          Nghệ Thông Tin của quý Cơ quan, quý doanh nghiệp.
+        </p>
       </div>
-      <div class="card-body pt-3 p-4">
-        <h6 class="fw-semibold fs-4">MacBook Air Pro</h6>
-        <div class="d-flex align-items-center justify-content-between">
-          <h6 class="fw-semibold fs-4 mb-0">$650 <span class="ms-2 fw-normal text-muted fs-3"><del>$900</del></span>
-          </h6>
-          <ul class="list-unstyled d-flex align-items-center mb-0">
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-          </ul>
+      <div id="project">
+        <?php foreach($list_web as $web) { ?>
+        <div class="items animate__animated animate__zoomIn">
+          <div class="project-desc">
+            <div class="project-img hover_sang2">
+              <img src="<?php echo $web['link'] ?>" alt="<?php echo $web['name'] ?>">
+            </div>
+            <div class="project-htitle">
+              <h3><?php echo $web['name'] ?></h3>
+            </div>
+          </div>
         </div>
+        <?php } ?>
+      </div>
+      <div class="t-center">
+        <a class="b-button-5 cursor-pointer" id="load-page">
+          <div>Tải thêm mẫu website khác</div>
+        </a>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-xl-3">
-    <div class="card overflow-hidden rounded-2">
-      <div class="position-relative">
-        <a href="javascript:void(0)"><img src="./assets/images/products/s7.jpg" class="card-img-top rounded-0"
-            alt="..."></a>
-        <a href="javascript:void(0)"
-          class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
-          data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
-            class="ti ti-basket fs-4"></i></a>
-      </div>
-      <div class="card-body pt-3 p-4">
-        <h6 class="fw-semibold fs-4">Red Valvet Dress</h6>
-        <div class="d-flex align-items-center justify-content-between">
-          <h6 class="fw-semibold fs-4 mb-0">$150 <span class="ms-2 fw-normal text-muted fs-3"><del>$200</del></span>
-          </h6>
-          <ul class="list-unstyled d-flex align-items-center mb-0">
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-xl-3">
-    <div class="card overflow-hidden rounded-2">
-      <div class="position-relative">
-        <a href="javascript:void(0)"><img src="./assets/images/products/s11.jpg" class="card-img-top rounded-0"
-            alt="..."></a>
-        <a href="javascript:void(0)"
-          class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
-          data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
-            class="ti ti-basket fs-4"></i></a>
-      </div>
-      <div class="card-body pt-3 p-4">
-        <h6 class="fw-semibold fs-4">Cute Soft Teddybear</h6>
-        <div class="d-flex align-items-center justify-content-between">
-          <h6 class="fw-semibold fs-4 mb-0">$285 <span class="ms-2 fw-normal text-muted fs-3"><del>$345</del></span>
-          </h6>
-          <ul class="list-unstyled d-flex align-items-center mb-0">
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-            <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 </div>
 <?php include 'inc/footer.php';?>
