@@ -31,21 +31,23 @@
   <base href="<?php echo $config['base'] ?>">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="twitter:site" content="@toptal" />
+  <meta name="twitter:card" content="summary_large_image" />
   <title><?php echo $title ?></title>
   <link rel="shortcut icon" type="image/png" href="https://nina.vn/favicon.ico" />
   <link rel="stylesheet" href="./assets/css/dataTables.css">
   <link rel="stylesheet" href="./assets/css/styles.css" />
   <link rel="stylesheet" href="./assets/css/index.css" />
+  <link rel="stylesheet" href="./assets/css/cursor.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body style="overflow-x: hidden;">
-  <!--  Body Wrapper -->
+  <div class="mouse-cursor cursor-outer"></div>
+  <div class="mouse-cursor cursor-inner"></div>
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
-    <!-- Sidebar Start -->
     <aside class="left-sidebar">
-      <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./" class="text-nowrap logo-img">
@@ -117,14 +119,9 @@
             </li>
           </ul>
         </nav>
-        <!-- End Sidebar navigation -->
       </div>
-      <!-- End Sidebar scroll-->
     </aside>
-    <!--  Sidebar End -->
-    <!--  Main wrapper -->
     <div class="body-wrapper" style="background: #eee;">
-      <!--  Header Start -->
       <header class="app-header header-nina .Regular .shadow">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">

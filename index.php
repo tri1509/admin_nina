@@ -1,7 +1,6 @@
 <?php include 'inc/header.php';?>
 <?php include 'data/support.php';?>
 <?php include 'data/web.php';?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <div id="index-content">
   <section id="support-top" class="support-top clearfix">
     <div class="container">
@@ -90,7 +89,7 @@
   </section>
   <section id="packed-web" class="packed-web clearfix">
     <div class="container">
-      <div class="packed-title">
+      <div class="packed-title position-relative section-title">
         <h2>Bảng báo giá thiết kế website trọn gói</h2>
         <p>Mang lại mọi thứ bạn cần cho một website chuyên nghiệp với đầy đủ tính năng</p>
       </div>
@@ -516,7 +515,7 @@
   </section>
   <section id="design-top" class="design-top clearfix">
     <div class="container">
-      <div class="design-title">
+      <div class="design-title position-relative section-title">
         <h3>QUY TRÌNH THIẾT KẾ WEBSITE TẠI NINA</h3>
       </div>
       <div id="design">
@@ -595,7 +594,7 @@
   </section>
   <section id="project-top" class="project-top clearfix">
     <div class="container">
-      <div class="project-title">
+      <div class="project-title position-relative section-title">
         <h3>KHÁCH HÀNG THIẾT KẾ WEBSITE TẠI NINA</h3>
         <p>
           Khách hàng thiết kế website tại Nina Co., Ltd.vinh dự được tham gia đóng góp vào tiến trình phát triển Công
@@ -607,7 +606,7 @@
         <div class="items animate__animated animate__zoomIn">
           <div class="project-desc">
             <div class="project-img hover_sang2">
-              <img src="<?php echo $web['link'] ?>" alt="<?php echo $web['name'] ?>">
+              <img src="<?php echo $web['link'] ?>" alt="<?php echo $web['name'] ?>" title="<?php echo $web['name'] ?>">
             </div>
             <div class="project-htitle">
               <h3><?php echo $web['name'] ?></h3>
