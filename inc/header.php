@@ -93,6 +93,7 @@
                 <span class="hide-menu">Thông tin</span>
               </a>
             </li>
+            <?php  if($quyen == '0') { ?>
             <li class="sidebar-item">
               <a class="sidebar-link" href="them-nguoi" aria-expanded="false">
                 <span>
@@ -109,6 +110,7 @@
                 <span class="hide-menu">Phòng</span>
               </a>
             </li>
+            <?php } ?>
             <li class="sidebar-item">
               <a class="sidebar-link" href="danh-sach-thanh-vien" aria-expanded="false">
                 <span>
@@ -122,7 +124,7 @@
       </div>
     </aside>
     <div class="body-wrapper" style="background: #eee;">
-      <header class="app-header header-nina .Regular .shadow">
+      <header class="app-header header-nina">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">
             <li class="nav-item d-block d-xl-none">

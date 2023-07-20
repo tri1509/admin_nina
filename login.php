@@ -44,12 +44,35 @@ include './lib/validation.php';
   background: url(./assets/images/backgrounds/no-view.svg) 0 0 no-repeat;
   transition: 0.5s;
 }
+
+.form-nina {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+
+#logo {
+  animation: .5s infinite blinkRed;
+  filter: brightness(1.5)
+}
+
+@keyframes blinkRed {
+
+  from,
+  to {
+    filter: brightness(1.5)
+  }
+
+  50% {
+    filter: brightness(1)
+  }
+}
 </style>
 
 <body style="overflow:hidden;" class="bg">
-  <!--  Body Wrapper -->
-
-  <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xxl-3 form-nina">
+  <div class="form-nina">
     <div class="card mb-0">
       <div class="card-body">
         <a .href="" class="text-nowrap logo-img text-center d-block py-3 w-100">
@@ -79,7 +102,6 @@ include './lib/validation.php';
           </div>
           <input type="submit" value="Đăng nhập" name="btn_login" id="btn_login"
             class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">
-
           <div class="d-flex align-items-center justify-content-center">
             <p class="fs-4 mb-0 fw-bold">Chưa có tài khoản ?</p>
             <a class="text-primary fw-bold ms-2" href="dang-ky">Đăng ký ngay</a>
@@ -88,7 +110,6 @@ include './lib/validation.php';
       </div>
     </div>
   </div>
-
   <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="./assets/js/phaohoa.js"></script>

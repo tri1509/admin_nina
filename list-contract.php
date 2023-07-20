@@ -26,16 +26,16 @@
                   <h6 class="fw-semibold mb-0">Tên NV</h6>
                 </th>
                 <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">MSHD</h6>
+                  <h6 class="fw-semibold mb-0">SDT</h6>
                 </th>
                 <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">Ngày ký</h6>
+                  <h6 class="fw-semibold mb-0">Tên miền</h6>
                 </th>
                 <th class="border-bottom-0">
                   <h6 class="fw-semibold mb-0">Thời hạn</h6>
                 </th>
                 <th class="border-bottom-0">
-                  <h6 class="fw-semibold mb-0">Ghi chú</h6>
+                  <h6 class="fw-semibold mb-0">Tháng</h6>
                 </th>
                 <th class="border-bottom-0">
                   <h6 class="fw-semibold mb-0">Thao tác</h6>
@@ -54,18 +54,30 @@
                   <h6 class="fw-semibold mb-0"><?php echo $i ?></h6>
                 </td>
                 <td class="border-bottom-0">
-                  <h6 class="fw-semibold mb-1 copy"><?php echo $resule['nameKh'] ?></h6>
+                  <?php if ($code == $resule['code']) { ?>
+                  <a href="chinh-sua-hop-dong/<?php echo $resule['id'] ?>" class="fw-semibold mb-1">
+                    <?php echo $resule['nameKh'] ?>
+                  </a>
+                  <?php }else{ ?>
+                  <a href="xem-hop-dong/<?php echo $resule['id'] ?>" class="fw-semibold mb-1">
+                    <?php echo $resule['nameKh'] ?>
+                  </a>
+                  <?php } ?>
                 </td>
                 <td class="border-bottom-0">
                   <p class="mb-0 fw-normal copy"><?php echo $resule['nameNv'] ?></p>
                 </td>
                 <td class="border-bottom-0">
                   <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-primary rounded-3 fw-semibold copy"><?php echo $resule['mshd'] ?></span>
+                    <span class="badge bg-primary rounded-3 fw-semibold copy">
+                      <?php echo $resule['phone'] ?>
+                    </span>
                   </div>
                 </td>
                 <td class="border-bottom-0">
-                  <?php echo $resule['ngayKy'] ?>
+                  <a href="<?php echo $resule['domain'] ?>" target="_blank">
+                    <?php echo $resule['domain'] ?>
+                  </a>
                 </td>
                 <td class="border-bottom-0">
                   <?php 
@@ -86,9 +98,10 @@
                   <?php } ?>
                 </td>
                 <td class="border-bottom-0">
-                  <?php echo $resule['note'] ?>
+                  <?php echo $resule['month'] ?>
                 </td>
                 <td class="border-bottom-0">
+                  <?php if ($code == $resule['code']) { ?>
                   <a href="chinh-sua-hop-dong/<?php echo $resule['id'] ?>"
                     class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
                     data-placement="top" title="Sửa"><i class="ti ti-edit"></i></a>
@@ -96,6 +109,10 @@
                     onclick="return confirm('Bạn có muốn xoá <?php echo $resule['nameKh'] ?> không?')"
                     class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
                     data-placement="top" title="Xoá"><i class="ti ti-trash"></i></a>
+                  <?php }else{ ?>
+                  <a href="xem-hop-dong/<?php echo $resule['id'] ?>" class="btn btn-indigo btn-sm rounded-0 text-white"
+                    type="button" data-toggle="tooltip" data-placement="top" title="Xem"><i class="ti ti-eye"></i></a>
+                  <?php } ?>
                 </td>
               </tr>
               <?php } } ?>

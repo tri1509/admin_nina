@@ -18,17 +18,20 @@
               <thead class="text-dark fs-4">
                 <tr>
                   <th class="border-bottom-0">
-                    <h6 class="fw-semibold mb-0">#</h6>
+                    <h6 class="fw-semibold mb-0">Ava</h6>
                   </th>
                   <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Tên</h6>
                   </th>
                   <th class="border-bottom-0">
-                    <h6 class="fw-semibold mb-0">Phòng</h6>
+                    <h6 class="fw-semibold mb-0">MSNV</h6>
                   </th>
                   <th class="border-bottom-0">
-                    <h6 class="fw-semibold mb-0">Quyền</h6>
+                    <h6 class="fw-semibold mb-0">Phòng</h6>
                   </th>
+                  <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Quyền</h6>
+                  </td>
                   <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Thao tác</h6>
                   </th>
@@ -56,7 +59,10 @@
                     </h6>
                   </td>
                   <td class="border-bottom-0">
-                    <h6 class="fw-semibold mb-1"><?php echo $resule_user['room'] ?></h6>
+                    <h6 class="fw-semibold mb-1"><?php echo $resule_user['code'] ?></h6>
+                  </td>
+                  <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-1">ADM_<?php echo $resule_user['room'] ?></h6>
                   </td>
                   <td class="border-bottom-0">
                     <h6 class="fw-semibold mb-1"><?php 
@@ -65,17 +71,17 @@
                     ?></h6>
                   </td>
                   <td class="border-bottom-0">
+                    <?php if ($quyen == "0"){ ?>
+                    <a href="thanhvien.php?del=<?php echo $resule_user['id'] ?>"
+                      onclick="return confirm('Bạn có muốn xoá <?php echo $resule_user['name'] ?> không?')"
+                      class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
+                      data-placement="top" title="Xoá"><i class="ti ti-trash"></i></a>
+                    <?php } ?>
                     <?php if ($code == $resule_user['code']){ ?>
                     <a href="thong-tin" class="btn btn-success btn-sm rounded-0 text-white" type="button"
                       data-toggle="tooltip" data-placement="top" title="Sửa"><i class="ti ti-edit"></i></a>
                     <a href="doi-mat-khau" class="btn btn-info btn-sm rounded-0 text-white" type="button"
                       data-toggle="tooltip" data-placement="top" title="Đổi mật khẩu"><i class="ti ti-lock"></i></a>
-                    <?php } ?>
-                    <?php if ($quyen === "0"){ ?>
-                    <a href="thanhvien.php?del=<?php echo $resule_user['id'] ?>"
-                      onclick="return confirm('Bạn có muốn xoá <?php echo $resule_user['name'] ?> không?')"
-                      class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip"
-                      data-placement="top" title="Xoá"><i class="ti ti-trash"></i></a>
                     <?php } ?>
                   </td>
                 </tr>

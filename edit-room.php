@@ -25,6 +25,11 @@
             value="<?php echo $result_room['name'] ; ?>">
           <label for="name">Phòng</label>
         </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" name="code" placeholder=" "
+            value="<?php echo $result_room['code'] ; ?>">
+          <label for="code">Mã số</label>
+        </div>
       </div>
       <input type="submit" class="btn btn-primary btn-sm" value="Cập nhật" name="edit_room">
     </form>

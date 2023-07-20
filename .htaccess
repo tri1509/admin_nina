@@ -14,6 +14,7 @@ RewriteRule "doi-mat-khau" "edit-pass.php"
 
 RewriteRule "^danh-sach-hop-dong/([0-9]+)$" "list-contract.php?del=$1"
 RewriteRule "^chinh-sua-hop-dong/([0-9]+)$" "edit-contract.php?id=$1"
+RewriteRule "^xem-hop-dong/([0-9]+)$" "view-contract.php?view=$1"
 RewriteRule "^chinh-sua-phong/([0-9]+)$" "edit-room.php?id=$1"
 
 

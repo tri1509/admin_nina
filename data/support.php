@@ -37,4 +37,3 @@ $list_support = array(
     'sdt' => '0931.332.359'
   ),
 );
-?>

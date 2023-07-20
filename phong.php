@@ -6,7 +6,8 @@
 
   if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_room'])) {
     $name_ADM = $_POST['name_ADM'];
-    $add_room = $ct -> add_room($name_ADM);
+    $code_ADM = $_POST['code_ADM'];
+    $add_room = $ct -> add_room($name_ADM,$code_ADM);
   }
 
   if(isset($add_room)){echo $add_room;}
@@ -34,6 +35,9 @@
                     <h6 class="fw-semibold mb-0">Tên ADM</h6>
                   </th>
                   <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Mã số</h6>
+                  </th>
+                  <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Thao tác</h6>
                   </th>
                 </tr>
@@ -50,7 +54,10 @@
                     <h6 class="fw-semibold mb-0"><?php echo $i ?></h6>
                   </td>
                   <td class="border-bottom-0">
-                    <h6 class="fw-semibold mb-1"><?php echo $resule_room['name'] ?></h6>
+                    <h6 class="fw-semibold mb-1">ADM_<?php echo $resule_room['name'] ?></h6>
+                  </td>
+                  <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-1"><?php echo $resule_room['code'] ?></h6>
                   </td>
                   <td class="border-bottom-0">
                     <a href="chinh-sua-phong/<?php echo $resule_room['id'] ?>"
@@ -80,6 +87,10 @@
             <div class="form-floating mb-3">
               <input type="text" class="form-control" name="name_ADM" placeholder=" " required>
               <label for="">Tên ADM</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" name="code_ADM" placeholder=" " required>
+              <label for="">Mã số</label>
             </div>
             <input type="submit" class="btn btn-dark btn-sm" value="Thêm" name="add_room">
           </form>

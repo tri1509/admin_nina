@@ -16,13 +16,13 @@
         <div class="row g-2">
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" name="nameNv" placeholder=" ">
+              <input autocomplete="off" type="text" class="form-control" name="nameNv" placeholder=" ">
               <label for="nameNv">Tên nhân viên phụ trách</label>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input class="form-control" type="text" name="msnv" placeholder=" ">
+              <input autocomplete="off" class="form-control" type="text" name="msnv" placeholder=" ">
               <label for="msnv">Mã số NV</label>
             </div>
           </div>
@@ -30,13 +30,13 @@
         <div class="row g-2">
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" name="nameKh" placeholder=" ">
+              <input autocomplete="off" type="text" class="form-control" name="nameKh" placeholder=" ">
               <label for="nameKh">Tên khách hàng</label>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input class="form-control" type="text" name="mshd" placeholder=" ">
+              <input autocomplete="off" class="form-control" type="text" name="mshd" placeholder=" ">
               <label for="mshd">Mã số HD</label>
             </div>
           </div>
@@ -44,27 +44,27 @@
         <div class="row g-3">
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" name="email" placeholder=" ">
+              <input autocomplete="off" type="text" class="form-control" name="email" placeholder=" ">
               <label for="email">Email</label>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input class="form-control" type="text" name="phone" placeholder=" ">
+              <input autocomplete="off" class="form-control" type="text" name="phone" placeholder=" ">
               <label for="phone">Số điện thoại</label>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input class="form-control" type="text" name="parameter" placeholder=" ">
-              <label for="parameter">Thông số</label>
+              <input autocomplete="off" class="form-control" type="text" name="domain" placeholder=" ">
+              <label for="domain">Tên miền</label>
             </div>
           </div>
         </div>
         <div class="row g-1">
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input class="form-control" type="text" name="address" placeholder=" ">
+              <input autocomplete="off" class="form-control" type="text" name="address" placeholder=" ">
               <label for="address">Địa chỉ</label>
             </div>
           </div>
@@ -72,34 +72,45 @@
         <div class="row g-4">
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" name="giaWeb" placeholder=" ">
+              <input autocomplete="off" type="text" class="form-control" name="giaWeb" placeholder=" ">
               <label for="giaWeb">Giá web</label>
               <div class="form-text">(triệu đồng)</div>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input class="form-control" type="text" name="giaHost" placeholder=" ">
+              <input autocomplete="off" class="form-control" type="text" name="giaHost" placeholder=" ">
               <label for="giaHost">Giá host</label>
               <div class="form-text">(triệu đồng)</div>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input class="form-control" type="text" name="ngayKy" placeholder=" ">
+              <input autocomplete="off" class="form-control" type="text" name="ngayKy" placeholder=" ">
               <label for="ngayKy">Ngày ký</label>
               <div class="form-text">(Ngày / tháng / năm)</div>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input class="form-control" type="text" name="ngayHet" placeholder=" ">
+              <input autocomplete="off" class="form-control" type="text" name="ngayHet" placeholder=" ">
               <label for="ngayHet">Ngày hết hạn</label>
               <div class="form-text">(Ngày / tháng / năm)</div>
             </div>
           </div>
         </div>
         <div class="row g-3">
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <select class="form-control" id="month" name="month">
+                <option value="">---Chọn---</option>
+                <?php for($i = 1; $i <= 12; $i++){ ?>
+                <option value="Tháng <?php echo $i ?>">Tháng <?php echo $i ?></option>
+                <?php } ?>
+              </select>
+              <label for="month">Tháng</label>
+            </div>
+          </div>
           <div class="col-md">
             <div class="form-check mb-3">
               <input checked class="form-check-input" type="radio" name="properties" id="properties1" value="1">

@@ -68,9 +68,9 @@
           </div>
           <div class="col-md">
             <div class="form-floating mb-3">
-              <input value="<?php echo $result['parameter'] ; ?>" class="form-control" type="text" name="parameter"
+              <input value="<?php echo $result['domain'] ; ?>" class="form-control" type="text" name="domain"
                 placeholder=" ">
-              <label for="parameter">Thông số</label>
+              <label for="domain">Tên miền</label>
             </div>
           </div>
         </div>
@@ -118,6 +118,19 @@
           </div>
         </div>
         <div class="row g-3">
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <select class="form-control" id="month" name="month">
+                <option value="">---Chọn---</option>
+                <?php for($i = 1; $i <= 12; $i++){ ?>
+                <option <?php if($result['month'] == "Tháng $i"){ echo "selected" ; } ?> value="Tháng <?php echo $i ?>">
+                  Tháng <?php echo $i ?>
+                </option>
+                <?php } ?>
+              </select>
+              <label for="month">Tháng</label>
+            </div>
+          </div>
           <div class="col-md">
             <div class="form-check mb-3">
               <input <?php if($result['properties'] == "1"){ echo "checked" ;} ?> class="form-check-input" type="radio"

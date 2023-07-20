@@ -29,9 +29,10 @@
             <label for="room">Phòng</label>
           </div>
           <div class="form-floating mb-3">
-            <select class="form-control" id="permission" name="permission">
-              <option <?php if($resule_info['permission'] == 0){echo "selected";}?> value="0">Quản trị</option>
-              <option <?php if($resule_info['permission'] == 1){echo "selected";}?> value="1">User</option>
+            <select class="form-control" id="permission" name="permission" aria-label="Disabled select example"
+              disabled>
+              <option <?php if($resule_info['permission'] == '0'){echo "selected";}?> value="0">Quản trị</option>
+              <option <?php if($resule_info['permission'] == '1'){echo "selected";}?> value="1">User</option>
             </select>
             <label for="permission">Quyền</label>
           </div>

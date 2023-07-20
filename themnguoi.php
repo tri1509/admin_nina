@@ -20,11 +20,6 @@
     }else{
       $room = $_POST['room'];
     }
-    if($_POST['permission'] == " ") {
-      $error['permission'] = "Quyền sử dụng đâu ?";
-    }else{
-      $permission = $_POST['permission'];
-    }
     if(empty($_POST['pass'])) {
       $error['pass'] = "Không được để trống mật khẩu !";
     }else{
@@ -37,7 +32,6 @@
         'code' => $code_user,
         'room' => $room,
         'avatar' => $avatar_user,
-        'permission' => $permission,
         'pass' => $pass
       );
       $add_user = $ct -> add_user($data);
@@ -103,21 +97,6 @@
                 <label for="room">Phòng</label>
                 <div class="form-text text-danger">
                   <?php if(!empty($error['room'])) { echo $error['room'] ; }?>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-floating mb-3">
-                <select class="form-control" name="permission">
-                  <option value=" ">---Chọn---</option>
-                  <option value="0" <?php if(!empty($permission) && $permission == "0"){ echo "selected" ;} ?>>Quản trị
-                  </option>
-                  <option value="1" <?php if(!empty($permission) && $permission == "1"){ echo "selected" ;} ?>>User
-                  </option>
-                </select>
-                <label for="permission">Quyền</label>
-                <div class="form-text text-danger">
-                  <?php if(!empty($error['permission'])) { echo $error['permission'] ; }?>
                 </div>
               </div>
             </div>

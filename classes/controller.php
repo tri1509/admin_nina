@@ -83,11 +83,12 @@
         public function update_room($data,$files,$id) {
             $id = mysqli_real_escape_string($this->db->link, $id);
             $name = mysqli_real_escape_string($this->db->link, $data['name']);
+            $code = mysqli_real_escape_string($this->db->link, $data['code']);
             if ($name == ''){
                 $alert= sweet_error("Không được để trống tên !") ;
                 return $alert;
             }else{
-                $query = "UPDATE tbl_room SET name = '$name' WHERE id = '$id'";
+                $query = "UPDATE tbl_room SET name = '$name',code='$code' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if($result){
                     header('location:../tb/thongbaophong.php');
@@ -119,12 +120,13 @@
             $mshd = mysqli_real_escape_string($this->db->link, $data['mshd']);
             $email = mysqli_real_escape_string($this->db->link, $data['email']);
             $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
-            $parameter = mysqli_real_escape_string($this->db->link, $data['parameter']);
+            $domain = mysqli_real_escape_string($this->db->link, $data['domain']);
             $address = mysqli_real_escape_string($this->db->link, $data['address']);
             $giaWeb = mysqli_real_escape_string($this->db->link, $data['giaWeb']);
             $giaHost = mysqli_real_escape_string($this->db->link, $data['giaHost']);
             $ngayKy = mysqli_real_escape_string($this->db->link, $data['ngayKy']);
             $ngayHet = mysqli_real_escape_string($this->db->link, $data['ngayHet']);
+            $month = mysqli_real_escape_string($this->db->link, $data['month']);
             $properties = mysqli_real_escape_string($this->db->link, $data['properties']);
             $note = mysqli_real_escape_string($this->db->link, $data['note']);
             $query = "UPDATE tbl_contract SET 
@@ -135,12 +137,13 @@
                 mshd = '$mshd',
                 email = '$email',
                 phone = '$phone',
-                parameter = '$parameter',
+                domain = '$domain',
                 address = '$address',
                 giaWeb = '$giaWeb',
                 giaHost = '$giaHost',
                 ngayKy = '$ngayKy',
                 ngayHet = '$ngayHet',
+                month = '$month',
                 properties = '$properties',
                 note = '$note'
                 WHERE id = '$id' AND code = '$code' ";
@@ -164,9 +167,10 @@
             }
         }
 
-        public function add_room($name_ADM){
-            $code = mysqli_real_escape_string($this->db->link, $name_ADM);
-            $query = "INSERT INTO tbl_room(name) VALUES('$name_ADM')";
+        public function add_room($name_ADM,$code_ADM){
+            $name_ADM = mysqli_real_escape_string($this->db->link, $name_ADM);
+            $code_ADM = mysqli_real_escape_string($this->db->link, $code_ADM);
+            $query = "INSERT INTO tbl_room(name,code) VALUES('$name_ADM','$code_ADM')";
             $result = $this->db->insert($query);
             if($result){
                 header('location:danh-sach-phong');
@@ -181,10 +185,16 @@
             $name = mysqli_real_escape_string($this->db->link, $data['name']);
             $room = mysqli_real_escape_string($this->db->link, $data['room']);
             $avatar = mysqli_real_escape_string($this->db->link, $data['avatar']);
-            $permission = mysqli_real_escape_string($this->db->link, $data['permission']);
             $pass = mysqli_real_escape_string($this->db->link, $data['pass']);
             $check_code = "SELECT * FROM admin WHERE code='$code' LIMIT 1";
             $result_check = $this->db->select($check_code);
+            $check_permission = "SELECT * FROM tbl_room WHERE code='$code'";
+            $result_permission = $this->db->select($check_permission);
+            if($result_permission){
+                $permission = '0' ;
+            }else{
+                $permission = '1' ;
+            }
             if($result_check){
                 $get_resule = $result_check -> fetch_assoc();
                 $alert = "<div class='alert alert-info' role='alert'>Mã số này đã được ";
@@ -209,7 +219,6 @@
         public function update_info($data,$files,$code_info_id) {
             $name = mysqli_real_escape_string($this->db->link, $data['name']);
             $room = mysqli_real_escape_string($this->db->link, $data['room']);
-            $permission = mysqli_real_escape_string($this->db->link, $data['permission']);
             $avatar = mysqli_real_escape_string($this->db->link, $data['avatar']);
             if ($name == ''){
                 $alert= sweet_error("Không được để trống tên !") ;
@@ -217,7 +226,6 @@
             }else{
                 $query = "UPDATE admin SET 
                     name = '$name',
-                    permission = '$permission',
                     room = '$room',
                     avatar = '$avatar'
                     WHERE id = '$code_info_id'";
@@ -244,12 +252,27 @@
             return $result;
         }
 
+        public function get_id_view($view){
+            $view = mysqli_real_escape_string($this->db->link,$view);
+            $query = "SELECT * FROM tbl_contract WHERE id = '$view' LIMIT 1";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
         public function get_id($id,$code){
             $id = mysqli_real_escape_string($this->db->link,$id);
             $code = mysqli_real_escape_string($this->db->link,$code);
-            $query = "SELECT * FROM tbl_contract WHERE id = '$id' AND code = '$code' LIMIT 1";
-            $result = $this->db->select($query);
-            return $result;
+            $check_permission = "SELECT * FROM tbl_room WHERE code='$code'";
+            $result_permission = $this->db->select($check_permission);
+            if($result_permission){
+                $query = "SELECT * FROM tbl_contract WHERE id = '$id' LIMIT 1";
+                $result = $this->db->select($query);
+                return $result;
+            }else{
+                $query = "SELECT * FROM tbl_contract WHERE id = '$id' AND code = '$code' LIMIT 1";
+                $result = $this->db->select($query);
+                return $result;
+            }
         }
 
         public function del($id,$code) {
@@ -262,12 +285,19 @@
                 return $alert;
             }
         }
-
         // ALTER TABLE `nguon` ADD `update_day` TIMESTAMP NOT NULL AFTER `time`;
         public function show($code){
-            $query = "SELECT * FROM tbl_contract WHERE code = '$code' ORDER BY update_day DESC, id DESC";
-            $result = $this->db->select($query);
-            return $result;
+            $check_permission = "SELECT * FROM tbl_room WHERE code='$code'";
+            $result_permission = $this->db->select($check_permission);
+            if($result_permission){
+                $query = "SELECT * FROM tbl_contract ORDER BY update_day DESC, id DESC";
+                $result = $this->db->select($query);
+                return $result;
+            }else{
+                $query = "SELECT * FROM tbl_contract WHERE code = '$code' ORDER BY update_day DESC, id DESC";
+                $result = $this->db->select($query);
+                return $result;
+            }
         }
         public function insert($data,$files,$code){
             $code = mysqli_real_escape_string($this->db->link, $code);
@@ -277,15 +307,16 @@
             $mshd = mysqli_real_escape_string($this->db->link, $data['mshd']);
             $email = mysqli_real_escape_string($this->db->link, $data['email']);
             $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
-            $parameter = mysqli_real_escape_string($this->db->link, $data['parameter']);
+            $domain = mysqli_real_escape_string($this->db->link, $data['domain']);
             $address = mysqli_real_escape_string($this->db->link, $data['address']);
             $giaWeb = mysqli_real_escape_string($this->db->link, $data['giaWeb']);
             $giaHost = mysqli_real_escape_string($this->db->link, $data['giaHost']);
             $ngayKy = mysqli_real_escape_string($this->db->link, $data['ngayKy']);
             $ngayHet = mysqli_real_escape_string($this->db->link, $data['ngayHet']);
+            $month = mysqli_real_escape_string($this->db->link, $data['month']);
             $properties = mysqli_real_escape_string($this->db->link, $data['properties']);
             $note = mysqli_real_escape_string($this->db->link, $data['note']);
-            $query = "INSERT INTO tbl_contract(code,nameNv,msnv,nameKh,mshd,email,phone,parameter,address,giaWeb,giaHost,ngayKy,ngayHet,properties,note) VALUES('$code','$nameNv','$msnv','$nameKh','$mshd','$email','$phone','$parameter','$address','$giaWeb','$giaHost','$ngayKy','$ngayHet','$properties','$note')";
+            $query = "INSERT INTO tbl_contract(code,nameNv,msnv,nameKh,mshd,email,phone,domain,address,giaWeb,giaHost,ngayKy,ngayHet,month,properties,note) VALUES('$code','$nameNv','$msnv','$nameKh','$mshd','$email','$phone','$domain','$address','$giaWeb','$giaHost','$ngayKy','$ngayHet','$month','$properties','$note')";
             $result = $this->db->insert($query);
             if($result){
                 header('location:./tb/thongbaohopdong.php');
