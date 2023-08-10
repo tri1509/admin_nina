@@ -1,24 +1,50 @@
 <?php 
   $title = "Danh sách thành viên"; 
   include 'inc/header.php';
-  $show_user = $ct -> show_user();
+  $show_room = $ct -> show_room();
+  if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['filter'])) {
+    $room = $_POST['room'];
+  }
+  if(isset($room)){
+    $show_user = $ct -> show_user($room);
+  }else{
+    $show_user = $ct -> show_user($room = '');
+  }
   if(isset($_GET['del'])){
     $id = $_GET['del'];
     $del = $ct -> del_user($id);
-  }	
+  }
 ?>
 <div class="card">
   <div class="card-body">
     <h5 class="card-title fw-bolder mb-4"><?php echo $title ?></h5>
     <div class="row">
       <div class="card">
+        <div class="row">
+          <form action="" method="post">
+            <div class="input-group">
+              <select class="form-select" name="room">
+                <option value="">Chọn...</option>
+                <?php while ($resule_room = $show_room -> fetch_assoc()) { ?>
+                <option <?php if(isset($room) && $room == $resule_room['name']){echo "selected";}?>
+                  value="<?php echo $resule_room['name'] ?>">
+                  Phòng <?php echo $resule_room['name'] ?>
+                </option>
+                <?php } ?>
+              </select>
+              <button type="submit" name="filter" class="btn btn-outline-secondary" type="button">
+                Lọc
+              </button>
+            </div>
+          </form>
+        </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-hover text-nowrap mb-0 align-middle">
               <thead class="text-dark fs-4">
                 <tr>
                   <th class="border-bottom-0">
-                    <h6 class="fw-semibold mb-0">Ava</h6>
+                    <h6 class="fw-semibold mb-0">Avatar</h6>
                   </th>
                   <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Tên</h6>

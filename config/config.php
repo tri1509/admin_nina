@@ -2,10 +2,9 @@
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASS", "");
-define("DB_NAME", "hop_dong");
+define("DB_NAME", "hcm3top");
 
 $config = array(
   'base' => 'http://localhost/admin-nina/',
-  'username' => 'root'
 );
 ?>

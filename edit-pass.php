@@ -38,7 +38,7 @@
           <label for="pass">Nhập mật khẩu cũ</label>
           <a class="password-control" onclick="return show_hide_password(this);"></a>
         </div>
-        <div class="form-floating mb-3">
+        <div class="form-floating">
           <input type="password" name="new_pass" id="new_password" class="form-control" placeholder=" ">
           <label for="new_pass">Nhập mật khẩu mới</label>
           <a class="password-control" onclick="return show_hide_new_password(this);"></a>
@@ -47,7 +47,9 @@
       <input type="submit" class="btn btn-primary btn-sm" value="Cập nhật" name="edit_pass">
     </form>
   </div>
-  <?php if(isset($edit_pass)) {echo $edit_pass;} ?>
+  <div class="col-md-4 ms-3">
+    <?php if(isset($edit_pass)) {echo $edit_pass;} ?>
+  </div>
 </div>
 <script>
 function show_hide_password(target) {

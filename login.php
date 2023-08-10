@@ -98,13 +98,13 @@ include './lib/validation.php';
                 Ghi nhớ mật khẩu
               </label>
             </div>
-            <a class="text-primary fw-bold" href="./index.html">Quên mật khẩu ?</a>
+            <a class="text-primary fw-bold">Quên mật khẩu ?</a>
           </div>
           <input type="submit" value="Đăng nhập" name="btn_login" id="btn_login"
             class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">
           <div class="d-flex align-items-center justify-content-center">
             <p class="fs-4 mb-0 fw-bold">Chưa có tài khoản ?</p>
-            <a class="text-primary fw-bold ms-2" href="dang-ky">Đăng ký ngay</a>
+            <a class="text-primary fw-bold ms-2">Đăng ký ngay</a>
           </div>
         </form>
       </div>

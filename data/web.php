@@ -120,11 +120,11 @@ $list_web = array(
     'link' => 'https://nina.vn/upload/hinhanh/500547086697231.jpg',
   ),
   30 => array(
-    'name' => 'HOA TƯƠI ABR',
-    'link' => 'https://nina.vn/upload/hinhanh/175590527975888.jpg',
+    'name' => 'khánh hưng car',
+    'link' => 'https://design26.ninavietnam.org/chothuexe_nguyenngochung_0354923W_t3/1.png',
   ),
   31 => array(
-    'name' => 'Trầm Hương',
+    'name' => 'Trầm Hương An Tâm',
     'link' => 'http://design12.ninavietnam.org/tramhuong_nguyenngocthienphuoc_678723w_t4/bg.png',
   ),
   32 => array(
@@ -162,6 +162,10 @@ $list_web = array(
   40 => array(
     'name' => 'nội thất saikou',
     'link' => 'https://design31.ninavietnam.org/noithatnhahangcafeshowroom_DinhDuong_1073923W_T7/Website%201.png',
+  ),
+  41 => array(
+    'name' => 'Công ty trâm anh',
+    'link' => 'https://design29.ninavietnam.org/dogiadung_xuatnhapkhautramanh_1168823W_23_t7/tai.png',
   ),
 );
 krsort($list_web);

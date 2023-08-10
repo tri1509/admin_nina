@@ -29,16 +29,21 @@
 
 <head>
   <base href="<?php echo $config['base'] ?>">
-  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index,follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="twitter:site" content="@toptal" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="format-detection" content="telephone=no">
   <title><?php echo $title ?></title>
+  <link rel="canonical" href="<?php echo $config['base'] ?>" />
   <link rel="shortcut icon" type="image/png" href="https://nina.vn/favicon.ico" />
   <link rel="stylesheet" href="./assets/css/dataTables.css">
   <link rel="stylesheet" href="./assets/css/styles.css" />
-  <link rel="stylesheet" href="./assets/css/index.css" />
+  <link rel="stylesheet" href="./assets/css/nina.css" />
+  <link rel="stylesheet" href="./assets/css/owl_carousel.css" />
   <link rel="stylesheet" href="./assets/css/cursor.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -50,8 +55,8 @@
     <aside class="left-sidebar">
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./" class="text-nowrap logo-img">
-            <img id="logo" src="https://nina.vn/upload/hinhanh/logothietkewebnina-3831.webp" width="150" alt="" />
+          <a href="./">
+            <img class="lazy loaded" src="./assets/images/logos/LOGO NINA CO.png" alt="Nina" width="100" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -93,6 +98,14 @@
                 <span class="hide-menu">Thông tin</span>
               </a>
             </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="danh-sach-thanh-vien" aria-expanded="false">
+                <span>
+                  <i class="ti ti-users"></i>
+                </span>
+                <span class="hide-menu">Thành viên</span>
+              </a>
+            </li>
             <?php  if($quyen == '0') { ?>
             <li class="sidebar-item">
               <a class="sidebar-link" href="them-nguoi" aria-expanded="false">
@@ -105,20 +118,12 @@
             <li class="sidebar-item">
               <a class="sidebar-link" href="danh-sach-phong" aria-expanded="false">
                 <span>
-                  <i class="ti ti-users"></i>
+                  <i class="ti ti-sitemap"></i>
                 </span>
-                <span class="hide-menu">Phòng</span>
+                <span class="hide-menu">Quản lý</span>
               </a>
             </li>
             <?php } ?>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="danh-sach-thanh-vien" aria-expanded="false">
-                <span>
-                  <i class="ti ti-list"></i>
-                </span>
-                <span class="hide-menu">Thành viên</span>
-              </a>
-            </li>
           </ul>
         </nav>
       </div>

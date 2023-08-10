@@ -106,10 +106,17 @@
             return $result;
         }
 
-        public function show_user(){
-            $query = "SELECT * FROM admin ORDER BY id ASC";
-            $result = $this->db->select($query);
-            return $result;
+        public function show_user($room){
+            $room = mysqli_real_escape_string($this->db->link,$room);
+            if (!empty($room)){
+                $query = "SELECT * FROM admin WHERE room = '$room'";
+                $result = $this->db->select($query);
+                return $result;
+            }else{
+                $query = "SELECT * FROM admin ORDER BY id ASC";
+                $result = $this->db->select($query);
+                return $result;
+            }
         }
         
         public function update($data,$files,$code,$id) {
@@ -285,18 +292,29 @@
                 return $alert;
             }
         }
-        // ALTER TABLE `nguon` ADD `update_day` TIMESTAMP NOT NULL AFTER `time`;
-        public function show($code){
+        
+        public function show($code,$room_filter){
+            $room_filter = mysqli_real_escape_string($this->db->link,$room_filter);
             $check_permission = "SELECT * FROM tbl_room WHERE code='$code'";
             $result_permission = $this->db->select($check_permission);
-            if($result_permission){
-                $query = "SELECT * FROM tbl_contract ORDER BY update_day DESC, id DESC";
+            if(!empty($room_filter)){
+                $choose = "SELECT * FROM admin WHERE room = '$room_filter'";
+                $result_choose = $this->db->select($choose);
+                $list_contract = $result_choose -> fetch_assoc();
+                $get_list_contract_code = $list_contract['code'];
+                $query = "SELECT * FROM tbl_contract WHERE code ='$get_list_contract_code'";
                 $result = $this->db->select($query);
                 return $result;
             }else{
-                $query = "SELECT * FROM tbl_contract WHERE code = '$code' ORDER BY update_day DESC, id DESC";
-                $result = $this->db->select($query);
-                return $result;
+                if($result_permission){
+                    $query = "SELECT * FROM tbl_contract ORDER BY update_day DESC, id DESC";
+                    $result = $this->db->select($query);
+                    return $result;
+                }else{
+                    $query = "SELECT * FROM tbl_contract WHERE code = '$code' ORDER BY update_day DESC, id DESC";
+                    $result = $this->db->select($query);
+                    return $result;
+                }
             }
         }
         public function insert($data,$files,$code){
